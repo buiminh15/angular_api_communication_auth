@@ -1,7 +1,6 @@
+import { ApiService } from './../shared/api.service';
 import { Component, OnInit } from '@angular/core';
 import {Contact} from '../shared/contact.model'
-import {Http, Response} from '@angular/http'
-import 'rxjs/add/operator/map'
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
@@ -9,11 +8,11 @@ import 'rxjs/add/operator/map'
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[]
-  constructor(public http: Http) { }
+  constructor(public api: ApiService) { }
 
   ngOnInit() {
-    this.http.get('/api/contacts').map((res: Response)=>
-     res.json()).subscribe(data => {
+    this.api.get('contacts')
+    .subscribe(data => {
        this.contacts = data
        console.log(this.contacts)  
       })

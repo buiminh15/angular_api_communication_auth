@@ -1,3 +1,4 @@
+import { ApiService } from './shared/api.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +25,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
