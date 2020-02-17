@@ -9,10 +9,13 @@
       <h1>Contact Manager</h1>
     </div>
   </div>
-  <div class="item">
-    <button [routerLink]="['/new']" routerLinkActive="router-link-active" class="ui basic button">
+  <div class="item" *ngIf="auth.isLoggedIn()">
+    <button [routerLink]="['/new']" routerLinkActive="router-link-active" class="ui basic button" >
       <i class="add user icon" aria-hidden="true"></i>
       Add Contact
     </button>
+  </div>
+  <div class="right menu" *ngIf="auth.isLoggedIn()">
+    <button class="ui primary button logout" (click)="logout()">Logout</button>
   </div>
 </div>

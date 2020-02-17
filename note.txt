@@ -1,0 +1,2 @@
+DB_CONN=mongodb+srv://minhbb:12345@cluster0-d9dj2.mongodb.net/test?retryWrites=true&w=majority
+JWT_SECRET=O472waVuID7Kv4he7LEf70mmJ8fYPuzrZVVeR6Hc7FOjciv1wSUy841weTTOIhS
